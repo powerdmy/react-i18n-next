@@ -1,0 +1,50 @@
+# Output files
+/out
+/vhosts
+
+
+# Temporary files
+.eslintcache
+
+
+# Environment files
+.env
+
+
+# Dependency folders
+node_modules
+npm-debug.log
+
+
+# NPM
+npm-shrinkwrap.json
+
+
+# Numerous always-ignore extensions
+*.bak
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+
+
+# OS or Editor folders
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
+.history/
