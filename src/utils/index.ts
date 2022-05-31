@@ -58,7 +58,7 @@ export class KeyDetector {
   }
 
   static getNsByText(text?: string): string {
-    const NS_REG = /(?:useTranslation|withTranslation)\(\[?['"](.*?)['"]/g;
+    const NS_REG = /(?:useTranslation|useI18n)\(\[?['"](.*?)['"]/g;
     const nsKey = (text?.match(NS_REG) || [])[0] || "";
     return nsKey.replace(NS_REG, "$1");
   }

@@ -11,7 +11,6 @@ export default class RegisterHover implements vscode.HoverProvider {
 
   provideHover(document: vscode.TextDocument, position: vscode.Position) {
     const key = KeyDetector.getKey(document, position);
-
     const library: Record<string, string> | undefined =
       this.context.workspaceState.get(ZH_URL_KEY);
 

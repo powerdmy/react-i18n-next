@@ -6,7 +6,9 @@ import { setVsCodeConfig } from "./utils";
 /**
  * 修改用户setting.json配置
  */
-export default function updateUserVscodeSetting() {
+export default function updateUserVscodeSetting(
+  context: vscode.ExtensionContext
+) {
   vscode.window
     .showInputBox({
       title: "设置",
@@ -18,6 +20,6 @@ export default function updateUserVscodeSetting() {
         return;
       }
       setVsCodeConfig(ZH_URL_KEY, url);
-      getI18n(url);
+      getI18n(context, url);
     });
 }

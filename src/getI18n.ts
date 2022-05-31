@@ -1,7 +1,7 @@
 import { window } from "vscode";
+import * as vscode from "vscode";
 import { ZH_URL_KEY } from "./config";
 import { getI18nResource, getVsCodeConfig } from "./utils";
-import EventBus from "./utils/EventBus";
 import updateSetting from "./updateSetting";
 
 /**
@@ -9,20 +9,23 @@ import updateSetting from "./updateSetting";
  * @param inputUrl
  * @returns
  */
-export default async function getI18n(inputUrl?: string) {
+export default async function getI18n(
+  context: vscode.ExtensionContext,
+  inputUrl?: string
+) {
   const url = inputUrl || getVsCodeConfig(ZH_URL_KEY);
 
   if (!url) {
     const okText = "去配置";
     const result = await window.showErrorMessage("请配置语料CDN地址", okText);
     if (result === okText) {
-      updateSetting();
+      updateSetting(context);
     }
     return;
   }
 
-  getI18nResource(url).then((data) => {
-    EventBus.emit("setI18n", data);
-    window.showInformationMessage("语料同步成功:" + url);
-  });
+  const data = await getI18nResource(url);
+  context.workspaceState.update(ZH_URL_KEY, data);
+  window.showInformationMessage("语料同步成功:" + url);
+  return data;
 }

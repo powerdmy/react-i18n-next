@@ -1,70 +1,51 @@
-# react-i18n-next README
+# react-i18n-next
 
-This is the README for your extension "react-i18n-next". After writing up a brief description, we recommend including the following sections.
+react-i18next 多语言中文提示插件，根据多语言 key 提示中文（只支持中文语料不存储在本地的项目）
 
-## Features
+- 支持识别 `useTranslation` 和 `useI18n` hook
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+```javascript
+export const Test = () => {
+  const { t } = useTranslation();
+  return <div>{t("key")}</div>;
+};
+```
 
-For example if there is an image subfolder under your extension project workspace:
+```javascript
+export const Test = () => {
+  const { t } = useI18n();
+  return <div>{t("key")}</div>;
+};
+```
 
-\!\[feature X\]\(images/feature-x.png\)
+- 支持传入命名空间
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```javascript
+export const Test = () => {
+  const { t } = useTranslation("namespace");
+  return <div>{t("key")}</div>; // namespace.key
+};
+```
 
-## Requirements
+```javascript
+export const Test = () => {
+  const { t } = useI18n("namespace");
+  return <div>{t("key")}</div>; // // namespace.key
+};
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 开始
 
-## Extension Settings
+1. 打开 vscode 命令行，输入 `更新中文语料`，选择此命令
+   ![WX20220531-163757](https://user-images.githubusercontent.com/20468805/171149606-d510619c-339d-4e23-8ab4-cfc3acde218c.png)
+2. 点击去配置
+   ![WX20220531-163832](https://user-images.githubusercontent.com/20468805/171149907-3729fee3-7650-4091-83f9-19a505c808d0.png)
+3. 输入远端的中文语料链接（json 数据格式）
+   ![WX20220531-163908](https://user-images.githubusercontent.com/20468805/171150017-5d34b30c-9aac-42e9-989f-b9ee86e13c2e.png)
+4. 配置成功
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 特点
 
-For example:
+### 1.key hover 提示
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+![pic](https://user-images.githubusercontent.com/20468805/171150219-f9991216-025b-45dc-9add-46fdee75899e.png)
