@@ -32,7 +32,7 @@ export const Test = () => {
 ```javascript
 export const Test = () => {
   const t = useI18n("namespace");
-  return <div>{t("key")}</div>; // // namespace.key
+  return <div>{t("key")}</div>; //  namespace.key
 };
 ```
 
