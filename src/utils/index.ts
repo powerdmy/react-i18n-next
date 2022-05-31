@@ -29,6 +29,9 @@ export function setVsCodeConfig(key: string, value: any) {
     .update(key, value, false);
 }
 
+/**
+ * key处理
+ */
 export class KeyDetector {
   static getKeyByContent(text: string) {
     const keys = (text.match(KEY_REG) || []).map((key) =>
