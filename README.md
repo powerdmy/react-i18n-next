@@ -2,6 +2,8 @@
 
 react-i18next 多语言中文提示插件，根据多语言 key 提示中文（只支持中文语料不存储在本地的项目）
 
+[插件下载](https://git.duowan.com/dengmingyu1/vscode-react-i18n-next/-/raw/master/react-i18n-next-0.0.1.vsix?inline=false)
+
 - 支持识别 `useTranslation` 和 `useI18n` hook
 
 ```javascript
@@ -36,6 +38,13 @@ export const Test = () => {
 
 ## 开始
 
+### 安装
+
+下载文件，选择从 VSIX 安装，选择下载的 VSIX 文件
+<img width="452" alt="install" src="https://user-images.githubusercontent.com/20468805/171160229-7c7e1aeb-e28d-4788-a56b-c19cb888214e.png">
+
+### 配置
+
 1. 打开 vscode 命令行，输入 `更新中文语料`，选择此命令
    ![WX20220531-163757](https://user-images.githubusercontent.com/20468805/171149606-d510619c-339d-4e23-8ab4-cfc3acde218c.png)
 2. 点击去配置
@@ -46,6 +55,6 @@ export const Test = () => {
 
 ## 特点
 
-### 1.key hover 提示
+### key hover 提示
 
 ![pic](https://user-images.githubusercontent.com/20468805/171150219-f9991216-025b-45dc-9add-46fdee75899e.png)
