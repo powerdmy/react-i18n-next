@@ -1,6 +1,5 @@
 import axios from "axios";
 import * as vscode from "vscode";
-import * as fs from "fs";
 import { EXTEND_NAME, KEY_REG } from "../config";
 
 export async function getI18nResource(url: string) {
@@ -39,11 +38,6 @@ export class KeyDetector {
     );
 
     return [...new Set(keys)];
-  }
-
-  static getKeyByFilepath(filepath: string) {
-    const file: string = fs.readFileSync(filepath, "utf-8");
-    return this.getKeyByContent(file);
   }
 
   static getKey(document: vscode.TextDocument, position: vscode.Position) {

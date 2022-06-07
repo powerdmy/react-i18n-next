@@ -10,6 +10,7 @@
     "Other"
   ],
   "activationEvents": [
+    "onCommand:react-i18n-next.i18nTransform",
     "onLanguage:react",
     "onLanguage:typescriptreact",
     "onLanguage:javascriptreact",
@@ -26,6 +27,27 @@
       {
         "command": "react-i18n-next.addZh",
         "title": "添加中文语料CDN地址"
+      },
+      {
+        "command": "react-i18n-next.i18nTransform",
+        "title": "中文语料转换成key(i18nTransform)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceLangId =~ /vue|html|react|typescript|typescriptreact|javascript/",
+          "command": "react-i18n-next.i18nTransform",
+          "alt": "react-i18n-next.i18nTransform",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "react-i18n-next.i18nTransform",
+        "key": "ctrl+t",
+        "mac": "cmd+t"
       }
     ],
     "configuration": {

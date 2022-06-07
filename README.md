@@ -62,3 +62,9 @@ export const Test = () => {
 ### key hover 提示
 
 ![pic](https://user-images.githubusercontent.com/20468805/171150219-f9991216-025b-45dc-9add-46fdee75899e.png)
+
+### 中文转换成多语言 key
+
+### 同步远端语料到本地
+
+多语言发布后，打开 vscode 命令行，执行 `更新中文语料`，即可同步刚刚发布的语料到本地
