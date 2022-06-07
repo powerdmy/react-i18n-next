@@ -34,7 +34,7 @@
       }
     ],
     "menus": {
-      "explorer/context": [
+      "editor/context": [
         {
           "when": "resourceLangId =~ /vue|html|react|typescript|typescriptreact|javascript/",
           "command": "react-i18n-next.i18nTransform",
