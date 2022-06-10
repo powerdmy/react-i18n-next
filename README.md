@@ -14,16 +14,20 @@ react-i18next 多语言中文提示插件，根据多语言 key 提示中文（�
 
 ### 配置
 
-1. 打开 vscode 命令行，输入 `更新中文语料`，选择此命令
+1. 复制多语言平台的中文 cdn 地址到粘贴板，一般是项目测试环境的语料
+   oneShip: https://cdn.myshopline.com/t/i18n/oneship/homepage-test/zh-hans-cn.json
+   LMS: https://cdn.myshopline.com/t/i18n/LMS/LMS-test/zh-hans-cn.json
+
+2. 打开 vscode 命令行，输入 `更新中文语料`，选择此命令
    <br/>
    <img width="452" src="https://user-images.githubusercontent.com/20468805/171149606-d510619c-339d-4e23-8ab4-cfc3acde218c.png" />
-2. 点击去配置
+3. 点击去配置
    <br/>
    <img width="452" src="https://user-images.githubusercontent.com/20468805/171149907-3729fee3-7650-4091-83f9-19a505c808d0.png" />
-3. 输入远端的中文语料链接（json 数据格式）
+4. 粘贴刚复制的中文语料链接（json 数据格式）
    <br/>
    <img width="452" src="https://user-images.githubusercontent.com/20468805/171150017-5d34b30c-9aac-42e9-989f-b9ee86e13c2e.png" />
-4. 配置成功
+5. 配置成功
 
 ## 特点
 

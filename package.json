@@ -26,7 +26,7 @@
       },
       {
         "command": "react-i18n-next.addZh",
-        "title": "添加中文语料CDN地址"
+        "title": "配置中文语料CDN地址"
       },
       {
         "command": "react-i18n-next.i18nTransform",

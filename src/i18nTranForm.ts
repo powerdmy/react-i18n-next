@@ -6,7 +6,7 @@ const transform = (lang: Record<string, string> | undefined, text: string) => {
     return text;
   }
 
-  const REG = /[\u4e00-\u9fa5]+/g;
+  const REG = /[\u4e00-\u9fa5]+/g; // 中文正则
   const matchWords = text.match(REG);
   const LANG_KEY = Object.keys(lang);
 

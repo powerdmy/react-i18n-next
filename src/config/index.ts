@@ -2,7 +2,7 @@ export * from "./lanage";
 export * from "./lib";
 
 /** key提取正则 */
-export const KEY_REG = /(?:[\s{\.]t)\(['"]([^]+?)['"]/g;
+export const KEY_REG = /(?:[\s{\.\()]t)\(['"]([^]+?)['"]/g;
 
 /**
  * http正则
