@@ -1,22 +1,12 @@
 # react-i18n-next
 
-react-i18next 多语言中文提示插件，根据多语言 key 提示中文（需要配置远端语料地址）
-
-[插件下载](https://git.duowan.com/dengmingyu1/vscode-react-i18n-next/-/raw/master/react-i18n-next-0.0.1.vsix?inline=false)
+react-i18n-next 多语言中文提示插件，根据多语言 key 提示中文（需要配置远端语料地址）
 
 ## 开始
-
-### 安装
-
-下载文件，选择从 VSIX 安装，选择刚下载的 VSIX 文件
-<br/>
-<img width="452" alt="install" src="https://user-images.githubusercontent.com/20468805/171160229-7c7e1aeb-e28d-4788-a56b-c19cb888214e.png">
 
 ### 配置
 
 1. 复制多语言平台的中文 cdn 地址到粘贴板，一般是项目测试环境的语料
-   oneShip: https://cdn.myshopline.com/t/i18n/oneship/homepage-test/zh-hans-cn.json
-   LMS: https://cdn.myshopline.com/t/i18n/LMS/LMS-test/zh-hans-cn.json
 
 2. 打开 vscode 命令行，输入 `更新中文语料`，选择此命令
    <br/>
