@@ -2,8 +2,9 @@
   "name": "react-i18n-next",
   "displayName": "react-i18n-next",
   "publisher": "dengmmyy",
-  "description": "",
-  "version": "0.0.2",
+  "description": "A vscode extension for i18next",
+  "version": "1.0.0",
+  "icon": "https://user-images.githubusercontent.com/20468805/173813784-7eee43fc-88c1-4915-8678-74a3cbe614a9.png",
   "engines": {
     "vscode": "^1.65.0"
   },
