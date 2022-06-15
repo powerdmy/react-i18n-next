@@ -17,7 +17,7 @@ export default async function getI18n(
 
   if (!url) {
     const okText = "去配置";
-    const result = await window.showErrorMessage("请配置语料CDN地址", okText);
+    const result = await window.showErrorMessage("请配置语料远端地址", okText);
     if (result === okText) {
       updateSetting(context);
     }
