@@ -2,6 +2,12 @@ import * as vscode from "vscode";
 import { ZH_URL_KEY } from "./config";
 import { findStringByKey } from "./utils";
 
+interface OptionsType {
+  key: string;
+  label: string;
+  path: string;
+}
+
 export default async function searchKeyByWord(
   context: vscode.ExtensionContext
 ) {
@@ -21,27 +27,51 @@ export default async function searchKeyByWord(
       title: "Search for key by Chinese",
       placeHolder: "Please enter the Chinese words",
     });
+    if (!word) {
+      return;
+    }
 
-    const key = LANG_KEY.find((key) => LANG[key] === word);
+    const REG = new RegExp(word.trim() as string);
+    const keys = LANG_KEY.filter((key) => REG.test(LANG[key])); // 模糊匹配中文 会匹配到多个Key
 
-    if (key) {
-      const resultFilePath = findStringByKey(folder.uri.fsPath, key);
-      if (!resultFilePath.length) {
-        vscode.window.showErrorMessage("文件找不到这个key: " + key);
+    if (keys.length) {
+      const resultFileItems: OptionsType[] = findStringByKey(
+        folder.uri.fsPath,
+        keys
+      ).map(({ key, absPath }) => {
+        return {
+          key,
+          label:
+            "$(explorer-view-icon)" + absPath.replace(folder.uri.fsPath, ""),
+          path: absPath,
+          detail: `${key}: ${LANG[key]}`,
+        };
+      });
+
+      if (!resultFileItems.length) {
+        vscode.window.showErrorMessage("多语言搜索失败：" + word);
         return;
       }
-      const selectedPath = await vscode.window.showQuickPick(resultFilePath, {
-        placeHolder: "Please select the target file",
-      });
-      if (selectedPath) {
-        const document = await vscode.workspace.openTextDocument(selectedPath);
+
+      const resultFileItem = await vscode.window.showQuickPick(
+        resultFileItems,
+        {
+          placeHolder: "Please select the target file and open",
+        }
+      );
+      if (resultFileItem) {
+        const document = await vscode.workspace.openTextDocument(
+          resultFileItem.path
+        );
         vscode.window.showTextDocument(document);
         vscode.window.showInformationMessage(
-          `定位成功，"${word}"对应的key是 ${key}`
+          `定位成功，"${LANG[resultFileItem.key]}"对应的key是 ${
+            resultFileItem.key
+          }`
         );
       }
     } else {
-      vscode.window.showErrorMessage("语料库找不到这个单词: " + word);
+      vscode.window.showErrorMessage("语料库找不到这个词语: " + word);
     }
   }
 }

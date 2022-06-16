@@ -83,15 +83,25 @@ export class KeyDetector {
   }
 }
 
+interface KeyResType {
+  absPath: string;
+  key: string;
+}
+
 /**
  *
  * @param filePath 项目路径
- * @param lookingForString 搜索关键词
+ * @param targetKeys 搜索关键词
  */
-export function findStringByKey(filePath: string, lookingForString: string) {
-  const resultFilePath: string[] = [];
+export function findStringByKey(filePath: string, targetKeys: string[]) {
+  const resultFilePath: KeyResType[] = [];
   const excludeFileReg = /\.less$|\.css$|\.png$|\.svg$|\.jpg$|\.md$/g;
-  const excludeFolderReg = /\.git|node_modules|build|dist|.next/g;
+  const excludeFolderReg =
+    /\.git|node_modules|build|dist|.next|assets|img|images/g;
+
+  if (!targetKeys.length) {
+    return [];
+  }
 
   recursiveReadFile(filePath);
 
@@ -121,10 +131,15 @@ export function findStringByKey(filePath: string, lookingForString: string) {
       return;
     }
 
-    const data = readFile(fileName);
-    const exc = new RegExp(lookingForString);
-    if (exc.test(data)) {
-      resultFilePath.push(fileName);
+    const data: string = readFile(fileName);
+    const exc = new RegExp(targetKeys.join("|"));
+    const match = data.match(exc);
+
+    if (match && match[0]) {
+      resultFilePath.push({
+        absPath: fileName,
+        key: match[0],
+      });
     }
   }
 

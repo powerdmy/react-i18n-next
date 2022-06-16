@@ -31,7 +31,7 @@
       },
       {
         "command": "react-i18n-next.i18nTransform",
-        "title": "中文语料转换成key(i18nTransform)"
+        "title": "中文语料转换到key(i18nTransform)"
       },
       {
         "command": "react-i18n-next.searchByKey",
