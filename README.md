@@ -15,16 +15,13 @@ vscode 插件市场搜索 `react-i18n-next`，下载安装
 
 ### 配置
 
-1. 复制多语言平台的中文 cdn 地址到粘贴板，一般是项目测试环境的语料
-2. 打开 vscode 命令行，输入 `更新中文语料(i18nUpdate)`，选择此命令
-   `<br/>`
-   `<img width="452" src="https://user-images.githubusercontent.com/20468805/171149606-d510619c-339d-4e23-8ab4-cfc3acde218c.png" />`
+1. 复制多语言平台的中文 cdn 地址到粘贴板
+2. 打开 vscode 命令面板（command+shift+P），输入 `更新中文语料(i18nUpdate)`，选择此命令
+   ![alt text](https://user-images.githubusercontent.com/20468805/171149606-d510619c-339d-4e23-8ab4-cfc3acde218c.png)
 3. 点击去配置
-   `<br/>`
-   `<img width="452" src="https://user-images.githubusercontent.com/20468805/171149907-3729fee3-7650-4091-83f9-19a505c808d0.png" />`
+   ![alt text](https://user-images.githubusercontent.com/20468805/171149907-3729fee3-7650-4091-83f9-19a505c808d0.png)
 4. 粘贴刚复制的中文语料链接（json 数据格式）
-   `<br/>`
-   `<img width="452" src="https://user-images.githubusercontent.com/20468805/171150017-5d34b30c-9aac-42e9-989f-b9ee86e13c2e.png" />`
+   ![alt text](https://user-images.githubusercontent.com/20468805/171150017-5d34b30c-9aac-42e9-989f-b9ee86e13c2e.png)
 5. 配置成功
 
 ### 同步远端语料
@@ -35,9 +32,9 @@ vscode 插件市场搜索 `react-i18n-next`，下载安装
 
 ### key hover 提示
 
-支持识别 `useTranslation` 和 `useI18n` hook 传入的命名空间，需要使用 `t或者I18n或者i18n`作为转换函数名字
+支持识别 `useTranslation` 和 `useI18n` hook 传入的命名空间(需要限制一个文件只有一个命名空间)，需要使用 `t或者I18n或者i18n`作为转换函数名字
 
-支持通过 react-i18n-next.translateFn 字段配置翻译函数，默认 `t|I18n|i18`
+支持通过 react-i18n-next.translateFn 字段配置翻译函数，默认 `t|I18n|i18n`
 
 ```javascript
 export const Test = () => {

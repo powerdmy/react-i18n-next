@@ -3,14 +3,11 @@ export * from "./lib";
 
 /** key提取默认正则 */
 export const DEFAULT_KEY_REG =
-  /(?:[\s{\.\()](?:t|i18n|I18n))\(['"]([^]+?)['"]\)/g;
+  /(?:[\s{\.\()](?:t|i18n|I18n))\(['"]([^]+?)['"]/g;
 
 export const genKeyReg = (translateFn?: string) => {
   return translateFn
-    ? new RegExp(
-        `(?:[\\s{\\.\\()](?:${translateFn}))\\([\'"]([^]+?)[\'"]\\)`,
-        "g"
-      )
+    ? new RegExp(`(?:[\\s{\\.\\()](?:${translateFn}))\\([\'"]([^]+?)[\'"]`, "g")
     : DEFAULT_KEY_REG;
 };
 
