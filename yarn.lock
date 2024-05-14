@@ -429,11 +429,6 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-data-uri-to-buffer@^4.0.0:
-  version "4.0.0"
-  resolved "http://npm-registry.duowan.com/data-uri-to-buffer/download/data-uri-to-buffer-4.0.0.tgz#b5db46aea50f6176428ac05b73be39a57701a64b"
-  integrity sha1-tdtGrqUPYXZCisBbc745pXcBpks=
-
 debug@4, debug@^4.1.1, debug@^4.3.2:
   version "4.3.4"
   resolved "http://npm-registry.duowan.com/debug/download/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
@@ -649,14 +644,6 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-fetch-blob@^3.1.2, fetch-blob@^3.1.4:
-  version "3.1.5"
-  resolved "http://npm-registry.duowan.com/fetch-blob/download/fetch-blob-3.1.5.tgz#0077bf5f3fcdbd9d75a0b5362f77dbb743489863"
-  integrity sha1-AHe/Xz/NvZ11oLU2L3fbt0NImGM=
-  dependencies:
-    node-domexception "^1.0.0"
-    web-streams-polyfill "^3.0.3"
-
 file-entry-cache@^6.0.1:
   version "6.0.1"
   resolved "http://npm-registry.duowan.com/file-entry-cache/download/file-entry-cache-6.0.1.tgz#211b2dd9659cb0394b073e7323ac3c933d522027"
@@ -710,13 +697,6 @@ form-data@^2.5.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
-
-formdata-polyfill@^4.0.10:
-  version "4.0.10"
-  resolved "http://npm-registry.duowan.com/formdata-polyfill/download/formdata-polyfill-4.0.10.tgz#24807c31c9d402e002ab3d8c720144ceb8848423"
-  integrity sha1-JIB8McnUAuACqz2McgFEzriEhCM=
-  dependencies:
-    fetch-blob "^3.1.2"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -1068,20 +1048,6 @@ natural-compare@^1.4.0:
   resolved "http://npm-registry.duowan.com/natural-compare/download/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
-node-domexception@^1.0.0:
-  version "1.0.0"
-  resolved "http://npm-registry.duowan.com/node-domexception/download/node-domexception-1.0.0.tgz#6888db46a1f71c0b76b3f7555016b63fe64766e5"
-  integrity sha1-aIjbRqH3HAt2s/dVUBa2P+ZHZuU=
-
-node-fetch@^3.2.3:
-  version "3.2.3"
-  resolved "http://npm-registry.duowan.com/node-fetch/download/node-fetch-3.2.3.tgz#a03c9cc2044d21d1a021566bd52f080f333719a6"
-  integrity sha1-oDycwgRNIdGgIVZr1S8IDzM3GaY=
-  dependencies:
-    data-uri-to-buffer "^4.0.0"
-    fetch-blob "^3.1.4"
-    formdata-polyfill "^4.0.10"
-
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "http://npm-registry.duowan.com/normalize-path/download/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
@@ -1406,11 +1372,6 @@ v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "http://npm-registry.duowan.com/v8-compile-cache/download/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha1-LeGWGMZtwkfc+2+ZM4A12CRaLO4=
-
-web-streams-polyfill@^3.0.3:
-  version "3.2.0"
-  resolved "http://npm-registry.duowan.com/web-streams-polyfill/download/web-streams-polyfill-3.2.0.tgz#a6b74026b38e4885869fb5c589e90b95ccfc7965"
-  integrity sha1-prdAJrOOSIWGn7XFiekLlcz8eWU=
 
 which@2.0.2, which@^2.0.1:
   version "2.0.2"

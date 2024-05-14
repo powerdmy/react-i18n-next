@@ -3,7 +3,7 @@ const fs = require("fs");
 
 import axios from "axios";
 import * as vscode from "vscode";
-import { EXTEND_NAME, KEY_REG } from "../config";
+import { EXTEND_NAME, genKeyReg } from "../config";
 
 export async function getI18nResource(url: string) {
   const { data } = await axios.get(url);
@@ -35,19 +35,27 @@ export function setVsCodeConfig(key: string, value: any) {
  * key处理
  */
 export class KeyDetector {
-  static getKeyByContent(text: string) {
-    const keys = (text.match(KEY_REG) || []).map((key) =>
-      this.normalizeKey(key.replace(KEY_REG, "$1"), text)
+  /** 匹配正则 */
+  reg = new RegExp("");
+
+  constructor(params: { translateFn?: string }) {
+    const { translateFn } = params;
+    this.reg = genKeyReg(translateFn);
+  }
+
+  getKeyByContent(text: string) {
+    const keys = (text.match(this.reg) || []).map((key) =>
+      this.normalizeKey(key.replace(this.reg, "$1"), text)
     );
 
     return [...new Set(keys)];
   }
 
-  static getKey(document: vscode.TextDocument, position: vscode.Position) {
-    const keyRange = document.getWordRangeAtPosition(position, KEY_REG);
+  getKey(document: vscode.TextDocument, position: vscode.Position) {
+    const keyRange = document.getWordRangeAtPosition(position, this.reg);
 
     const key = keyRange
-      ? document.getText(keyRange).replace(KEY_REG, "$1")
+      ? document.getText(keyRange).replace(this.reg, "$1")
       : undefined;
 
     if (!key) {
@@ -57,18 +65,18 @@ export class KeyDetector {
     return this.normalizeKey(key, document.getText());
   }
 
-  static getNsByText(text?: string): string {
+  getNsByText(text?: string): string {
     const NS_REG = /(?:useTranslation|useI18n)\(\[?['"](.*?)['"]/g;
     const nsKey = (text?.match(NS_REG) || [])[0] || "";
     return nsKey.replace(NS_REG, "$1");
   }
 
-  static getNsByKey(key: string) {
+  getNsByKey(key: string) {
     const [prefix, resetKey] = key.split(":");
     return resetKey ? prefix : undefined;
   }
 
-  static normalizeKey(key: string, text?: string) {
+  normalizeKey(key: string, text?: string) {
     if (this.getNsByKey(key)) {
       return key.replace(":", ".");
     }

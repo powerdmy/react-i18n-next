@@ -1,13 +1,17 @@
 import * as vscode from "vscode";
-import { lanage } from "./config";
+import { TRANSLATE_FN, lanage } from "./config";
 import RegisterHover from "./hoverProvider";
 import updateSetting from "./updateSetting";
 import getI18n from "./getI18n";
 import i18nTranForm from "./i18nTranForm";
 import searchKeyByWord from "./searchKeyByWord";
+import { getVsCodeConfig } from "./utils";
 
 export async function activate(context: vscode.ExtensionContext) {
   await getI18n(context);
+
+  const translateFn = getVsCodeConfig(TRANSLATE_FN);
+  context.workspaceState.update(TRANSLATE_FN, translateFn);
 
   const disposables = [
     // hover i18n中文提示

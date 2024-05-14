@@ -63,6 +63,11 @@
           "type": "string",
           "default": "",
           "description": "中文模块cdn地址"
+        },
+        "react-i18n-next.translateFn": {
+          "type": "string",
+          "default": "",
+          "description": "翻译函数，多个则用'|'隔开"
         }
       }
     }
