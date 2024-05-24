@@ -105,7 +105,7 @@ export function findStringByKey(filePath: string, targetKeys: string[]) {
   const resultFilePath: KeyResType[] = [];
   const excludeFileReg = /\.less$|\.css$|\.png$|\.svg$|\.jpg$|\.md$/g;
   const excludeFolderReg =
-    /\.git|node_modules|build|dist|.next|assets|img|images/g;
+    /\.git|node_modules|build|dist|.next|assets|locale|locales|img|images/g;
 
   if (!targetKeys.length) {
     return [];

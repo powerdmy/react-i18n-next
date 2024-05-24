@@ -16,11 +16,11 @@ export default async function getI18n(
   const url = inputUrl || getVsCodeConfig(ZH_URL_KEY);
 
   if (!url) {
-    const okText = "去配置";
-    const result = await window.showErrorMessage("请配置语料远端地址", okText);
-    if (result === okText) {
-      updateSetting(context);
-    }
+    // const okText = "去配置";
+    // const result = await window.showErrorMessage("请配置语料远端地址", okText);
+    // if (result === okText) {
+    //   updateSetting(context);
+    // }
     return;
   }
 
